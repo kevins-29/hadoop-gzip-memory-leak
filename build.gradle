@@ -12,6 +12,6 @@ dependencies {
 }
 
 application {
-    applicationDefaultJvmArgs = ['-XX:+AlwaysPreTouch -Xms1g']
+    applicationDefaultJvmArgs = ['-XX:+AlwaysPreTouch', '-Xms1g']
     mainClassName = 'org.apache.hadoop.gzipmemoryleak.App'
 }
