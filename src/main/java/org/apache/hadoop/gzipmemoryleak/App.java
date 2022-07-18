@@ -10,6 +10,9 @@ import java.util.Random;
 public class App {
 
     public static void main(String[] args) {
+
+        System.out.println("Running test... press ctrl+C to cancel!");
+
         final GzipCodec gzipCodec = new GzipCodec();
         final Random random = new Random();
         while (true) {
