@@ -14,13 +14,15 @@ public class App {
 
         System.out.println("Running test... press ctrl+C to cancel!");
 
+        final int fileSize = args.length == 1 ? Integer.parseInt(args[0]) : 1024 * 1024;
+
         final GzipCodec gzipCodec = new GzipCodec();
         gzipCodec.setConf(new Configuration());
 
         final Random random = new Random();
         while (true) {
             try (CompressionOutputStream outputStream = gzipCodec.createOutputStream(new ByteArrayOutputStream())) {
-                for (int i = 0; i < 1_000_000; i++) {
+                for (int i = 0; i < fileSize; i++) {
                     outputStream.write(random.nextInt(256));
                 }
             } catch (IOException e) {
