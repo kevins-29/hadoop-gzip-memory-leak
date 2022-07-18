@@ -1,5 +1,6 @@
 package org.apache.hadoop.gzipmemoryleak;
 
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.io.compress.CompressionOutputStream;
 import org.apache.hadoop.io.compress.GzipCodec;
 
@@ -14,6 +15,8 @@ public class App {
         System.out.println("Running test... press ctrl+C to cancel!");
 
         final GzipCodec gzipCodec = new GzipCodec();
+        gzipCodec.setConf(new Configuration());
+
         final Random random = new Random();
         while (true) {
             try (CompressionOutputStream outputStream = gzipCodec.createOutputStream(new ByteArrayOutputStream())) {

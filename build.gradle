@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.apache.hadoop:hadoop-common:3.3.2'
+    implementation "org.apache.hadoop:hadoop-common:${versionHadoop}"
 }
 
 application {
